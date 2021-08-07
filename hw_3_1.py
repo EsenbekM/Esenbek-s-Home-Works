@@ -17,7 +17,6 @@ dictionary ={
     "int":12345,
     "float":2.32,
     "list":list_exemple,
-    "range":range(6),
     "dictionary":dictionary_example,
     "bool":x
 }
