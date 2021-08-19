@@ -22,7 +22,15 @@ print(
     '"very cold - +30 or -30"'
 )
 #created variable for amount of attempts
-tr = int(input("Print amount of attempts:  "))
+while 1:
+    try:
+        tr = int(input("Print amount of attempts:  "))
+        tr = int(tr)
+        break
+    except ValueError:
+        print("Print only intiger numbers")
+
+
 print("Let's play! \nPrint your number: ")
 #created variable for count remaining attempts
 s=tr
@@ -114,4 +122,3 @@ while count != tr:
 # added condition if attempts ended
 if count == tr:
     print(f'\nYour attempts is end\nThe target number was {num}\nThanks for playing my game!\n\n\n <|Made by Esen4iik|>')
-
