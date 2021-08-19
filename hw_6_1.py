@@ -3,15 +3,6 @@ import random
 num = random.randint(1, 100)
 count = 0
 #created counter variable
-#and created variable for hints
-vhot = num + 5
-vhot_ = num - 5
-
-hot = num + 10
-hot_ = num - 10
-
-near = num + 30
-near_ = num - 30
 #brouth out instructions
 print(
     'Guess the number around 1-100: \n '
@@ -21,7 +12,7 @@ print(
     '"cold" - around 30 \n '
     '"very cold - +30 or -30"'
 )
-#created variable for amount of attempts
+#created while cycle for errors
 while 1:
     try:
         tr = int(input("Print amount of attempts:  "))
@@ -86,28 +77,28 @@ while count != tr:
         )
         break
     # added condition for hints
-    elif guess <= vhot and guess >= vhot_:
+    elif guess <= num + 5 and guess >= num - 5:
         count += 1
         if guess < num:
             print("it's very hot, bigger")
         elif guess > num:
             print("it's very hot, lower")
     # added condition for hints
-    elif guess <= hot and guess >= hot_:
+    elif guess <= num + 10 and guess >= num - 10:
         count += 1
         if guess < num:
             print("it's hot, bigger")
         elif guess > num:
             print("it's hot, lower")
     # added condition for hints
-    elif guess <= near and guess >= near_:
+    elif guess <= num + 30 and guess >= num - 30:
         count += 1
         if guess < num:
             print("it's cold, bigger")
         elif guess > num:
             print("it's cold, lower")
     # added condition for hints
-    elif guess < near and guess > 0 or guess > near_ and guess <= 100:
+    elif guess < (num + 30) and guess > 0 or guess > (num + 30) and guess <= 100:
         count += 1
         if guess < num:
             print("it's very cold, bigger")
