@@ -12,7 +12,7 @@ freez("Print 'b' if your number is bigger \nPrint 'l' if your number is lower   
 
 # Created variables
 low = 0
-big = 100
+big = int(input("Enter end of range: "))
 sred = (big + low) // 2
 c=0
 # started while cycle
