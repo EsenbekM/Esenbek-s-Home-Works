@@ -167,6 +167,8 @@ def choose_list():
         elif l == 'taxi':
             list.append(taxi)
             break
+        elif l == 'food':
+            list.append(food)
         else:
             print("Incorrect command!")
 
@@ -242,4 +244,3 @@ try:
     main()
 except IndexError:
     print()
-    
