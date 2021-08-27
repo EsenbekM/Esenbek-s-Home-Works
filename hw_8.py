@@ -1,4 +1,4 @@
-#created lists
+
 classmates = [
     {
         "pozition": 1,
@@ -197,10 +197,20 @@ def find_contact(lst):
 
 # creat function for add
 def add_contact(lst):
-    name = input("Creat new contact\nEnter name: ")
-    phone = input("Enter phone: ")
-    contact = dict(pozition=((list[0][::-1][0]["pozition"]) + 1), name=name.title(), phone=phone)
-    lst.append(contact)
+    for i in lst:
+        name = input("Creat new contact\nEnter name: ").title()
+        phone = input("Enter phone: ")
+        contact = dict(pozition=((list[0][::-1][0]["pozition"]) + 1), name=name.title(), phone=phone)
+        if i['phone'] == contact['phone']:
+            print("This phone already exist!")
+            break
+        elif i['name'] == contact['name']:
+            print("This name already exist!")
+            break
+        elif i['phone'] != contact['phone'] and i['name'] != contact['name']:
+            print('Contact suchesfull added')
+            lst.append(contact)
+            break
 
 # creat function for delete
 def delete_contact(lst):
