@@ -197,10 +197,22 @@ def find_contact(lst):
 
 # creat function for add
 def add_contact(lst):
-    name = input("Creat new contact\nEnter name: ")
+    name = input("Creat new contact\nEnter name: ").title()
     phone = input("Enter phone: ")
     contact = dict(pozition=((list[0][::-1][0]["pozition"]) + 1), name=name.title(), phone=phone)
-    lst.append(contact)
+    l=[]
+    print(contact)
+    for i in list[0]:
+    	if i['name'] == name or i['phone'] == phone:
+    		l.append(i['name'])
+    		l.append(i['phone'])
+    for j in l:
+    	if j == name or j == phone:
+    		print('This contact name or phone already exist!')
+    		break
+    	else:
+    		list[0].append(contact)
+    		print('Contact suchesfull added')
 
 # creat function for delete
 def delete_contact(lst):
@@ -244,3 +256,4 @@ try:
     main()
 except IndexError:
     print()
+
